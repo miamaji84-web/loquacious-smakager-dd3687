@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "videos"
+    label: "Video Studio"
+    folder: "_posts/videos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "🎬 Video Title", name: "title", widget: "string", required: false}
+      - {label: "📝 Description", name: "body", widget: "markdown", required: false}
+      - {label: "🖼️ Upload Thumbnail", name: "thumbnail", widget: "image", required: false, hint: "মন চাইলে ফটো দিন, না দিলেও সমস্যা নেই"}
+      - {label: "🎥 Upload Video File", name: "video_file", widget: "file", required: false, hint: "ভিডিও ফাইল আপলোড করার জন্য"}
+      - {label: "📂 Category", name: "category", widget: "select", options: ["News", "Sports", "Tech", "Viral"], required: false}
+      - {label: "🕵️ Hidden Tags (SEO)", name: "tags", widget: "list", required: false, hint: "এগুলো দিলেও চলে, না দিলেও চলে"}
